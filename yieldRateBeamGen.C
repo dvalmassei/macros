@@ -11,7 +11,7 @@ void yield_rate(TString Ebeam = "E887MeV"){
     /////////////// Set Up Workdir and Output Files ///////////////
     const TString rootfile_dir = Form("/lustre19/expphy/volatile/hallc/qweak/adhidevi/rootfiles/E887MeV/Oct7_EV1111_d_BEAM_QTOR600");
     ofstream fout(Form("./textfiles/%s/%s.csv",Ebeam.Data(),Ebeam.Data()));
-    fout<<Form("%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s",
+    fout<<Form("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s",
         "QTOR","Rate_Mean","Rate_RMS","Rate_Entries","Yield_Mean","Yield_RMS","Yield_Entries",
         "Energy_Mean","Energy_RMS","Energy_Entries","Theta_Mean","Theta_RMS","Theta_Entries","Phi_Mean","Phi_RMS","Phi_Entries")<<endl;
     // this is a storage file for all the data (I think)//
@@ -22,7 +22,7 @@ void yield_rate(TString Ebeam = "E887MeV"){
         TChain* T = new TChain("QweakSimG4_Tree");
 
         // Add Rootfiles to One Tree //
-        for(int iRun=1001;iRun=<6000;iRun++){
+        for(int iRun=1001;iRun<=6000;iRun++){
             T->Add(Form("%s/Oct7_EV1111_d_BEAM_QTOR600_%d.root",rootfile_dir.Data(),iRun));
         }
 
