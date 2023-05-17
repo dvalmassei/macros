@@ -60,7 +60,7 @@ void yield_rate(TString Ebeam = "E887MeV"){
 
         // Draw Energy Histogram in third section of the Canvas //
         c1->cd(3);
-        T->Draw(Form("Primary.OriginVertexKineticEnergy[7]>>Energy_QTOR%d",Qtor[iQtor]),"Cerenkov.PMT.PMTTotalNbOfPEs[7]>0","goff");
+        T->Draw(Form("Cerenkov.Detector.OriginVertexKineticEnergy[7]>>Energy_QTOR%d",Qtor[iQtor]),"Cerenkov.PMT.PMTTotalNbOfPEs[7]>0","goff");
 
         // Draw Energy Histogram in the combined rate histogram //
         hPEforEnergy[iQtor] = (TH1D*)gDirectory->FindObject(Form("Energy_QTOR%d",Qtor[iQtor]));
@@ -72,7 +72,7 @@ void yield_rate(TString Ebeam = "E887MeV"){
 
         // Draw Theta Histogram in third section of the Canvas //
         c1->cd(4);
-        T->Draw(Form("Primary.OriginVertexThetaAngle[7]>>Theta_QTOR%d",Qtor[iQtor]),"Cerenkov.PMT.PMTTotalNbOfPEs[7]>0","goff");
+        T->Draw(Form("Cerenkov.Detector.OriginVertexThetaAngle[7]>>Theta_QTOR%d",Qtor[iQtor]),"Cerenkov.PMT.PMTTotalNbOfPEs[7]>0","goff");
 
         // Draw Theta Histogram in the combined rate histogram //
         hPEforTheta[iQtor] = (TH1D*)gDirectory->FindObject(Form("Theta_QTOR%d",Qtor[iQtor]));
@@ -83,7 +83,7 @@ void yield_rate(TString Ebeam = "E887MeV"){
 
         // Draw Phi Histogram in third section of the Canvas //
         c1->cd(5);
-        T->Draw(Form("Primary.OriginVertexPhiAngle[7]>>Phi_QTOR%d",Qtor[iQtor]),"Cerenkov.PMT.PMTTotalNbOfPEs[7]>0","goff");
+        T->Draw(Form("Cerenkov.Detector.OriginVertexPhiAngle[7]>>Phi_QTOR%d",Qtor[iQtor]),"Cerenkov.PMT.PMTTotalNbOfPEs[7]>0","goff");
 
         // Draw Phi Histogram in the combined rate histogram //
         hPEforPhi[iQtor] = (TH1D*)gDirectory->FindObject(Form("Phi_QTOR%d",Qtor[iQtor]));
